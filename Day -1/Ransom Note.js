@@ -27,3 +27,14 @@ function countChars(Object) {
 }
 
 console.log(canConstruct('abhcf', 'abhcahhasdfasasf'))
+
+
+// Second solution 
+var canConstruct1 = function(ransomNote, magazine) {
+    for (const char of magazine) {
+        ransomNote = ransomNote.replace(char, "");
+    }
+    if (!ransomNote) return true;
+    else return false;
+};
+return false;
