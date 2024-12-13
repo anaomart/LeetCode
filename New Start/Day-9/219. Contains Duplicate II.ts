@@ -3,10 +3,10 @@ function longestOnes(nums: number[], k: number): number {
     let max = 0;
     let left =0 ;
     let right =0 ;
-    let KValue = k 
-    console.log(right < nums.length)
+
     while(right <= nums.length){
-        console.log(list)
+
+        max = Math.max(max, list.length)
         if(nums[right]){
             list.push(nums[right]);
             right++;
@@ -15,23 +15,30 @@ function longestOnes(nums: number[], k: number): number {
             if(k > 0)
             {
                 k--;
-                list.push(1);
+                list.push(nums[right]);
                 right++;
             }else if(k <= 0){
                 let out = list.shift()
-                console.log(out)
-                if(out){
-                    continue
-                }else{
+
+                if(out ==1 ){         
+                   left++
+                }else if (out == 0){
+
                     k++;
+                }else{
+
+                    right++
+                    left++
                 }
             }
         }
+
+
+
+
+
     }
     
-    console.log(max)
     return max
 
 };
-console.log("hello")
-console.log(longestOnes([1,1,1,0,0,0,1,1,1,1,0], 2)); 
